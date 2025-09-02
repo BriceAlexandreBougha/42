@@ -179,7 +179,7 @@ void test_memmove(void)
     if (memmove(str, str2, 6) != ft_memmove(str, str2, 6)) printf("  \033[1;31mtest 1: KO\033[0m\n");
     else if (memmove(str, str2, 10) != ft_memmove(str, str2, 10)) printf("  \033[1;31mtest 2: KO\033[0m\n");
     else if (memmove(str, str2, 0) != ft_memmove(str, str2, 0)) printf("  \033[1;31mtest 3: KO\033[0m\n");
-    else if (memmove(str, str2, 15) != ft_memmove(str, str2, 15)) printf("  \033[1;31mtest 3: KO\033[0m\n");
+    else if (memmove(str, str2, 10) != ft_memmove(str, str2, 15)) printf("  \033[1;31mtest 3: KO\033[0m\n");
     else (printf("  \033[1;32mtest: OK\033[0m\n"));
     printf("\n");
     free(str);
@@ -199,7 +199,7 @@ void test_memset(void)
     if (memset(str, 't', 6) != ft_memset(str, 't', 6)) printf("  \033[1;31mtest 1: KO\033[0m\n");
     else if (memset(str, 't', 10) != ft_memset(str, 't', 10)) printf("  \033[1;31mtest 2: KO\033[0m\n");
     else if (memset(str, 't', 0) != ft_memset(str, 't', 0)) printf("  \033[1;31mtest 3: KO\033[0m\n");
-    else if (memset(str, 't', 15) != ft_memset(str, 't', 15)) printf("  \033[1;31mtest 3: KO\033[0m\n");
+    else if (memset(str, 't', 10) != ft_memset(str, 't', 15)) printf("  \033[1;31mtest 3: KO\033[0m\n");
     else (printf("  \033[1;32mtest: OK\033[0m\n"));
     printf("\n");
     free(str);
@@ -353,7 +353,6 @@ void test_strnstr(void)
     else count++;
     if (count == 3) printf("  \033[1;32mtest: OK\033[0m\n");
     printf("\n");
-    free(str);
     free(str2);
 }
 
@@ -521,58 +520,53 @@ void test_striteri(void)
 void test_putchar_fd(void)
 {
     printf("\033[1;34m- PUTCHAR_FD TEST\033[0m\n");
-    printf("\033[1;36m-- Expected: |\033[0mA\033[1;36m|  Printed: |\033[0m");
     ft_putchar_fd('A', 1);
-    printf("\033[1;36m|\033[0m\n\n");
+    printf("\033[1;36m Printed, Expected: |\033[0mA\033[1;36m|\033[0m\n");
+
 }
 
 void test_putstr_fd(void)
 {
     printf("\033[1;34m- PUTSTR_FD TEST\033[0m\n");
-    printf("\033[1;36m-- Expected: |\033[0mAzertyuiop\033[1;36m|  Printed: |\033[0m");
     ft_putstr_fd("Azertyuiop", 1);
-    printf("\033[1;36m|\033[0m\n\n");
+    printf("\033[1;36m Printed, Expected: |\033[0mAzertyuiop\033[1;36m|\033[0m\n");
+
 }
 
 void test_putendl_fd(void)
 {
     printf("\033[1;34m- PUTENDL_FD TEST\033[0m\n");
-    printf("\033[1;36m-- Expected: |\033[0mAzertyuiop(\\n)\033[1;36m|  Printed: |\033[0m");
+
     ft_putendl_fd("Azertyuiop", 1);
-    printf("\033[1;36m|\033[0m\n\n");
+    printf("\033[1;36m Printed, Expected: |\033[0mAzertyuiop(\\n)\033[1;36m|\033[0m\n");
+
 }
 
 void test_putnbr_fd(void)
 {
     printf("\033[1;34m- PUTNBR_FD TEST\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m-2147483648\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(-2147483648, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m-2147483648\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m-156\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(-156, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m-156\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m-1\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(-1, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m-1\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m0\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(0, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m0\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m1\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(1, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m1\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m156\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(156, 1);
-    printf("\033[1;36m|\033[0m\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m156\033[1;36m|\033[0m\n");
 
-    printf("\033[1;36m-- Expected: |\033[0m2147483647\033[1;36m|  Printed: |\033[0m");
     ft_putnbr_fd(2147483647, 1);
-    printf("\033[1;36m|\033[0m\n\n");
+    printf("\033[1;36m Printed, Expected: |\033[0m2147483647\033[1;36m|\033[0m\n");
+
 }
 
 int main(void)

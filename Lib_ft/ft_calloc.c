@@ -9,7 +9,7 @@ void* ft_calloc(size_t num, size_t size)
     ptr = malloc(size * num);
     if (!ptr)
         return (NULL);
-    for (int i = 0; i < num; i++)
+    for (size_t i = 0; i < num; i++)
         *(unsigned char *)(ptr + i) = 0;
     return (ptr);
 }

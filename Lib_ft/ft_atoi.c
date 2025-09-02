@@ -2,7 +2,7 @@
 
 static int my_strncmp(const char *str1, const char *str2, size_t n)
 {
-    int i = 0;
+    size_t i = 0;
 
     if (n == 0)
         return (0);

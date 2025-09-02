@@ -3,8 +3,8 @@
 char *ft_strnstr(const char *str, const char *search, size_t size)
 {
     int str_len = 0;
-    int search_len = 0;
-    int count = 0;
+    size_t search_len = 0;
+    size_t count = 0;
     int t = 0;
 
     for (; str[str_len]; str_len++);
