@@ -13,6 +13,7 @@ int ft_isdigit(int c);
 int ft_isprint(int c);
 void *ft_memchr(const void *data, int c, size_t size);
 int ft_memcmp(const void *data1, const void *data2, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t len);
 void *ft_memmove(void *dst, const void *src, size_t size);
 void *ft_memset(void *data, int c, size_t size);
 char *ft_strchr(const char *str, int c);
